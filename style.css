@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Fraunces:wght@700&display=swap");
+
+:root {
+  /*colors*/
+  --green-500: hsl(158, 36%, 37%);
+  --green-700: hsl(158, 42%, 18%);
+
+  --Black: hsl(212, 21%, 14%);
+  --Grey: hsl(228, 12%, 48%);
+  --Cream: hsl(30, 38%, 92%);
+  --White: hsl(0, 0%, 100%);
+
+  /*Fonts*/
+  --prime: "Montserrat", sans-serif;
+  --secondary: "Fraunces", serif;
+
+  /*font weight*/
+  --fw-reg: 500;
+  --fw-bold: 700;
+}
+
+/* General styling */
+body {
+  background: var(--Cream);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  width: 70vmax;
+}
+
+.product-card {
+  margin: 0 auto;
+  justify-content: center;
+  display: flex;
+  padding-top: 50px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.product-description {
+  background: var(--White);
+  padding: 20px;
+  line-height: 26px;
+}
+
+.product-description p {
+  font-family: var(--prime);
+  color: var(--Grey);
+  width: 50%;
+}
+
+.product-description h1 {
+  font-family: var(--secondary);
+  color: var(--green-500);
+}
+
+.product-description h3 {
+  color: var(--Grey);
+  font-family: var(--prime);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+.product-price h4 {
+  font-family: var(--secondary);
+  color: var(--Grey);
+  text-decoration: line-through;
+}
+
+.product-price{
+  display: flex;
+  gap: 40px;
+}
+
+button {
+  color: var(--White);
+  background: var(--green-500);
+  font-weight: var(--fw-bold);
+  width: 100%;
+  
+  max-width: 300px;
+  
+  margin: 1.5em 0;
+  
+  padding: 1em;
+  
+  border: none;
+  border-radius: 10px;
+}
+
+button:hover {
+  background: var(--green-700);
+  cursor: pointer;
+}
+
+/* Hide both images by default */
+.laptop-img,
+.mobile-img {
+  max-width: 100%;
+  height: auto;
+  display: none;
+}
+
+/* Show laptop image on screens wider than 700px */
+@media screen and (min-width: 700px) {
+  .laptop-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    /* Adjust the size */
+  }
+}
+
+h2 {
+  font-size: 2em;
+  font-family: var(--secondary);
+}
+
+/* Show mobile image on screens smaller than 700px*/
+@media screen and (max-width: 699px) {
+  .mobile-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    /* Adjust the size */
+  }
+}
+
+@media (max-width: 740px) {
+  .product-card {
+    flex-direction: column;
+  }
+
+  .product-image,
+  .product-description {
+    flex: 1;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
